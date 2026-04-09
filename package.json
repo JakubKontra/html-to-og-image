@@ -1,0 +1,54 @@
+{
+  "name": "html-to-og-image",
+  "version": "1.0.0",
+  "description": "Convert any HTML to Open Graph images on AWS Lambda. Bring your own template, get a PNG back.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf dist",
+    "test:local": "tsx src/test-local.ts",
+    "dev:server": "tsx watch src/local-server.ts"
+  },
+  "keywords": [
+    "og-image",
+    "open-graph",
+    "html-to-image",
+    "lambda",
+    "aws",
+    "puppeteer",
+    "screenshot",
+    "serverless",
+    "social-image",
+    "meta-image",
+    "s3"
+  ],
+  "author": "",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "dependencies": {
+    "@aws-sdk/client-cloudfront": "^3.1024.0",
+    "@aws-sdk/client-s3": "^3.908.0",
+    "@sparticuz/chromium": "^131.0.0",
+    "puppeteer-core": "^24.0.0"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.145",
+    "@types/node": "^22.10.2",
+    "puppeteer": "^24.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.8.4"
+  }
+}
